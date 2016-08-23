@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 "use strict";
 
 let chalk = require('chalk');
@@ -8,10 +7,6 @@ let emoji = require('node-emoji').emoji;
 let starPart = chalk.bgBlue.white.bold;
 let redStripe = chalk.bgRed;
 let whiteStripe = chalk.bgWhite;
-
-// console.log(starPart(` * * * * * `));
-// console.log(redStripe(`     ${emoji.star}    `));
-// console.log(whiteStripe(`         `));
 
 let flag = "";
 let starChar = starPart(`${emoji.star}  `);
