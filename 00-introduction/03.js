@@ -1,11 +1,7 @@
 #!/usr/bin/env node
-
-
 "use strict";
 
-var { node: nodeV,  v8: v8V} = global.process.versions;
-
-
+const { node: nodeV,  v8: v8V} = global.process.versions;
 
 console.log(`Node.js version: ${nodeV}
 V8 version: ${v8V}`);

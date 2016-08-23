@@ -1,3 +1,7 @@
 hey
 ho
 let's go
+
+/* VIA the REPL
+fs.writeFile("go.txt", "", () => {fs.appendFile("go.txt", "hey\n", () => {fs.appendFile("go.txt", "ho\n", ()=> {fs.appendFile("go.txt", "let's go\n", () => {fs.readFile("go.txt", "utf8", (err,data)=>{console.log(data)})})})})})
+*/
