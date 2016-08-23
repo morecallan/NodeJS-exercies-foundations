@@ -1,0 +1,48 @@
+{
+  "LANGUAGES": {
+    "JAVASCRIPT": "AWESOME",
+    "C++": "DIFFICULT",
+    "BASIC": "OLD"
+  }
+}
+[
+  '{{REPEAT(5, 7)}}',
+  {
+    _ID: '{{OBJECTID()}}',
+    INDEX: '{{INDEX()}}',
+    GUID: '{{GUID()}}',
+    ISACTIVE: '{{BOOL()}}',
+    BALANCE: '{{FLOATING(1000, 4000, 2, "$0,0.00")}}',
+    PICTURE: 'HTTP://PLACEHOLD.IT/32X32',
+    AGE: '{{INTEGER(20, 40)}}',
+    EYECOLOR: '{{RANDOM("BLUE", "BROWN", "GREEN")}}',
+    NAME: '{{FIRSTNAME()}} {{SURNAME()}}',
+    GENDER: '{{GENDER()}}',
+    COMPANY: '{{COMPANY().TOUPPERCASE()}}',
+    EMAIL: '{{EMAIL()}}',
+    PHONE: '+1 {{PHONE()}}',
+    ADDRESS: '{{INTEGER(100, 999)}} {{STREET()}}, {{CITY()}}, {{STATE()}}, {{INTEGER(100, 10000)}}',
+    ABOUT: '{{LOREM(1, "PARAGRAPHS")}}',
+    REGISTERED: '{{DATE(NEW DATE(2014, 0, 1), NEW DATE(), "YYYY-MM-DDTHH:MM:SS Z")}}',
+    LATITUDE: '{{FLOATING(-90.000001, 90)}}',
+    LONGITUDE: '{{FLOATING(-180.000001, 180)}}',
+    TAGS: [
+      '{{REPEAT(7)}}',
+      '{{LOREM(1, "WORDS")}}'
+    ],
+    FRIENDS: [
+      '{{REPEAT(3)}}',
+      {
+        ID: '{{INDEX()}}',
+        NAME: '{{FIRSTNAME()}} {{SURNAME()}}'
+      }
+    ],
+    GREETING: FUNCTION (TAGS) {
+      RETURN 'HELLO, ' + THIS.NAME + '! YOU HAVE ' + TAGS.INTEGER(1, 10) + ' UNREAD MESSAGES.';
+    },
+    FAVORITEFRUIT: FUNCTION (TAGS) {
+      VAR FRUITS = ['APPLE', 'BANANA', 'STRAWBERRY'];
+      RETURN FRUITS[TAGS.INTEGER(0, FRUITS.LENGTH - 1)];
+    }
+  }
+]
